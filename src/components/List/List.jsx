@@ -7,7 +7,7 @@ export const List = ({catId,selectedSubCats,maxPrice,sort}) => {
       // const {data,loading,error} = useFetch(`/products?populate=*&[filters][categories][id]=${catId}
       // ${selectedSubCats?.map((item)=>`&[filters][sub_categories][id][$eq]=${item}`)}
       // &[filters][price][$lte]=${maxPrice}&sort=price:${sort}`)
-      const {data,loading,error} = useFetch(`/products?populate=*${selectedSubCats?.map((item)=>`&[filters][sub_categories][id][$eq]=${item}`)}&[filters][price][$lte]=${maxPrice}`)
+      const {data,loading} = useFetch(`/products?populate=*${selectedSubCats?.map((item)=>`&[filters][sub_categories][id][$eq]=${item}`)}&[filters][price][$lte]=${maxPrice}`)
       // const { data, loading, error } = useFetch(
       //   `/products?populate=*${selectedSubCats.map(
       //     (item) => `&[filters][sub_categories][id][$eq]=${item}`
